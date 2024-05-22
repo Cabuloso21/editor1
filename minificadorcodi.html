@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minificador de Códigos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0px;
+        }
+       
+        header {
+            background:#666;
+            padding: 15px;
+        }
+
+        .logo {
+            color: #FF7700;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .text {
+            color: #333;
+            font-size: 22px;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 40px;    
+            margin-bottom: 20px;
+        }
+ 
+        textarea {
+            width: 90%;
+            height: 400px;
+            margin-bottom: 10px;
+            margin-left: 15px;  
+            border-radius: none;
+            border: 1px solid #666;
+        }
+        
+        button {
+            display: inline-block;
+            margin-right: 10px;
+            border: 1px solid white;
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-top: 30px;
+            margin-left: 22px;
+            margin-bottom: 25px;
+            background: goldenrod;
+            color: #333;
+        }
+
+        footer {
+            background-color: #555;
+            padding: 1.10px;
+            margin-top: 100px;
+            border-bottom: 1px solid white; 
+        }
+  
+        .brand p {
+            font-size: 15.20px;
+            color: silver;
+            margin-top: 30px;
+            text-align: absolute;
+            margin-left: 25px;
+        }
+
+        /* Estilos para o select */
+        select {
+            width: 90%;
+            padding: 10px;
+            margin-left: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #666;
+            background-color: #fff;
+            color: #333;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        select:focus {
+            outline: none;
+            border-color: #FF7700;
+        }
+
+        select option {
+            background-color: #fff;
+            color: #333;
+        }
+
+        select option:hover {
+            background-color: #FF7700;
+            color: #fff;
+        }
+   
+    </style>
+</head>
+<body>
+<header>
+    <div class="logo">Minificador de código</div>
+</header>
+
+<div class="text">Que tipo de código você quer minifica?</div>
+
+<select id="languageSelect">
+    <option value="html">HTML</option>
+    <option value="css">CSS</option>
+    <option value="js">JavaScript</option>
+    <option value="php">PHP</option>
+</select>
+
+<textarea id="codeInput" placeholder="Insira seu código aqui"></textarea>
+
+<button onclick="minificar()">Minificar</button>
+<button onclick="copiarMinificado()">Copiar</button>
+
+<footer>
+    <div class="brand">
+        <p>&copy;2024°-Lopixe.todos os direitos reservados.</p>
+    </div>
+</footer>
+
+<script>
+    function minificar() {
+        const selectedLanguage = document.getElementById('languageSelect').value;
+        const codeInput = document.getElementById('codeInput').value;
+
+        let minifiedCode;
+
+        if (selectedLanguage === 'html') {
+            minifiedCode = codeInput.replace(/>\s+</g, "><").trim();
+        } else if (selectedLanguage === 'css') {
+            minifiedCode = codeInput.replace(/\s+/g, " ").trim();
+        } else if (selectedLanguage === 'js') {
+            minifiedCode = codeInput.replace(/\s+/g, " ").trim();
+        } else if (selectedLanguage === 'php') {
+            // Implement PHP minification logic here
+            // Placeholder code for PHP minification
+            minifiedCode = codeInput.trim(); 
+        }
+
+        document.getElementById('codeInput').value = minifiedCode;
+   
+        alert('Código minificado com sucesso!');
+    }
+
+    function copiarMinificado() {
+        const minifiedCode = document.getElementById('codeInput').value;
+
+        copyToClipboard(minifiedCode);
+    }
+
+    function copyToClipboard(text) {
+        const textarea = document.createElement('textarea');
+        textarea.value = text;
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+        alert('Código minificado copiado para a área de transferência!');
+    }
+</script>
+</body>
+</html>
+
+

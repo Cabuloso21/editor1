@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Codigo responsivo</title>
+ <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+ 
+   <style>
+   body {
+   margin: 0px;
+   background: white;
+   
+   }
+   
+   header {
+   background: goldenrod;
+   padding: 15px; 
+   
+   }
+   
+   .logo {
+   color: #333;
+   font-size: 25px;
+   font-weight: bold;
+   }
+   
+   
+    .text {
+   color: #333;
+   font-size: 20px;
+   font-weight: bold;
+   margin-top: 30px;
+   text-align: center;
+    margin-left: 10px;      
+      
+   }
+   
+    .codi {
+   color: #333;
+   font-size: 16px;
+   font-weight: bold;
+   margin-top: 30px;
+   text-align: center;
+    margin-left: 0px;      
+      
+   }
+   
+    .description {
+   color: #333;
+   font-size: 17px;
+   font-weight: none;
+   margin-top: 30px;
+   text-align: absolute;
+   margin-left: 20px;      
+      
+   }
+   
+   button {
+    display: inline-block;
+    margin-right: 10px; /* Espaço entre os botões */
+    border: 1px solid  white;
+    border-radius: 10px;
+    padding: 10px 10px;
+     font-size: 15px;
+     font-weight: bold;
+     margin-top: 5px;
+     margin-left: 115px;
+     margin-bottom: 25px;
+     background: goldenrod;
+     color: #333;
+     
+     
+   }
+
+
+footer {
+ background-color: #555;
+ padding: 1.10px;
+ margin-top: 100px;
+ border-bottom: 1px solid white; 
+    
+ }
+  
+ 
+.brand p {
+ font-size: 15.20px;
+ color: silver;
+ margin-top: 30px;
+ text-align: absolute;
+ margin-left: 25px;
+  
+ }
+   
+   </style> 
+   
+<header>
+ <div class="logo">Lopixe</div>
+</header>
+
+<div class="text">Codigo para deixar seu Site responsivo</div>
+
+<div class="codi">CODIGO HTML</div>
+ <button class="button-onclick" onclick="adicionarConteudo('layoutSimples')">Adicionar código</button>
+ </div>
+ </div>
+
+<div class="text">O que é um site responsivo?</div>
+
+<div class="description">É o tamanho da pagina, esse codigo é responsavel por deixar os elemento ou seu site no tamanho padrão, de acordo com o tamanho da tela de cada celula, permitindo
+  que os usuarios que acessar seu site, visualize da forma adguada.
+</div>
+ 
+
+<footer>
+<div class="brand">
+<p>&copy;2024°-Lopixe.todos os direitos reservados.</p>
+</div>
+</footer>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function adicionarConteudo(tipoLayout) {
+  var conteudo = '';
+  
+  if (tipoLayout === 'layoutSimples') {
+    conteudo = `
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Exemplo de Grid Flexível</title>
+ <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+   <style>
+     body {
+   margin: 0px;
+   background: white;
+   
+   }
+   
+   header {
+   background: #444;
+   padding: 15px; 
+   
+   }
+   
+   .logo {
+   color: #ff7700;
+   font-size: 20px;
+   font-weight: bold;
+   }
+   
+   
+   </style> 
+   
+ <header>
+ <div class="logo">Logo do site</div>
+ </header>
+      
+      
+  `;
+  } else {
+    alert('Tipo de layout desconhecido.');
+    return; // Retorna se o tipo de layout não for reconhecido
+  }
+  
+  // Armazenar conteúdo na localStorage
+  localStorage.setItem('conteudoEditor', conteudo);
+  
+  // Redirecionar para a página do editor
+  window.location.href = 'meu editor 2.html';
+  
+  // Exibir mensagem de sucesso
+  alert('Código adicionado com sucesso, vá para o editor!');
+}
+</script>
+
+
+</body>
+</html>
